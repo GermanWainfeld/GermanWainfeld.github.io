@@ -1,0 +1,781 @@
+/*google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Teko:wght@300;400;500;600;700&display=swap');
+
+
+/*icomoon*/
+@font-face {
+    font-family: 'icomoon';
+    src: url('../img/iconos/icomoon.eot?3fghva');
+    src: url('../img/iconos/icomoon.eot?3fghva#iefix') format('embedded-opentype'),
+         url('../img/iconos/icomoon.ttf?3fghva') format('truetype'),
+         url('../img/iconos/icomoon.woff?3fghva') format('woff'),
+         url('../img/iconos/icomoon.svg?3fghva#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-menu:before {
+    content: "\e9bd";
+  }
+  .icon-cross:before {
+    content: "\ea0f";
+  }
+  .icon-github:before {
+    content: "\eab0";
+  }
+  .icon-linkedin:before {
+    content: "\eac9";
+  }
+/*icomoon fin*/
+
+:root{
+    --font: 'Roboto','helvetica','arial', sans-serif;
+    --font-condensed: 'Teko', sans-serif;
+    --color-bg:#ffdda6;
+    --color-bg-claro:#ffebcc;
+    --color-texto: #3a312e;
+    --color-destacado: #f24139;
+    --color-destacado-claro: #f9907a;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{    
+    font-family: var(--font);
+    background: var(--color-bg);
+    color:var(--color-texto);
+}
+
+main{
+    overflow: hidden;
+}
+
+
+h2{
+    width: 100%;
+    font-family: var(--font-condensed);
+    font-size: 75pt;
+    text-align: center;
+    color: var(--color-destacado);
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+}
+
+/*---header inicio---*/
+header {
+    padding: 20px 0;    
+}
+
+.header{
+    width: max-content;
+    height: max-content;
+    padding: 60px;
+    margin: 0 auto;
+    background-color: var(--color-bg-claro);
+    border-radius: 100%;
+    transition:linear 0.4s all;
+}
+
+.header div#circulo{
+    display: flex;
+    align-items: center;
+    height: 0;
+    padding-bottom: 50%;
+    padding-top: 50%;
+}
+
+.header h1.logo div{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.header h1.logo div > span{
+    color: var(--color-texto);
+    font-family: var(--font-condensed);
+    font-weight: 400;
+    line-height: 100%;
+    transition:linear 0.4s all;
+}
+
+/*Mi nombre es*/
+.header h1.logo div span:first-child{
+    margin-left: 74px;
+    font-size: 18pt;
+}
+
+/*german - wainfeld*/
+.header h1.logo div > span:nth-of-type(2), .header h1.logo div > span:nth-of-type(3){
+    font-family: var(--font);
+    font-size: 76pt;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--color-destacado);
+}
+
+/*Te doy la bienvenida - a mi porfolio*/
+.header h1.logo div > span:nth-of-type(4), .header h1.logo div > span:nth-of-type(5){
+    margin-right: 66px;
+    font-size: 24pt;
+    text-align: right;
+}
+/*---header fin---*/
+
+/*---nav inicio---*/
+div.menu{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;    
+    position: sticky;
+    top: 20px;  
+    z-index: 1000;
+    transition:linear 0.4s all;
+}
+
+div.menu a.logo-barra{
+    display: none;
+    opacity: 0;
+    transition:linear 0.4s all;
+}
+
+div.menu a.logo-barra.encabezado{
+    display: block;
+    position: absolute;
+    top: 3px;
+    left:40px;
+    font-family: var(--font-condensed);
+    font-size: 24pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-destacado);
+    opacity: 0;
+    transition:linear 0.4s all;
+}
+
+nav.navegacion, nav.modo-oscuro{
+    display: inline-flex;
+    justify-content: space-evenly;
+    width: max-content;
+    margin: 0 5px;
+    padding: 0 15px;
+    background: var(--color-bg-claro);
+    border-radius: 30px;
+    transition:linear 0.4s all;
+}
+
+nav.navegacion button {
+    display: none;
+}
+
+nav.modo-oscuro{
+    background: var(--color-bg-claro);
+}
+
+nav.navegacion a, nav.modo-oscuro button{
+    margin: 0 10px;
+    padding: 5px;
+    font-family: var(--font-condensed);
+    font-size: 16pt;
+    font-weight: 400;
+    color: var(--color-destacado);
+    transition: linear 0.2s all;
+}
+
+nav.navegacion a:hover, nav.modo-oscuro button{
+    color: var(--color-texto);
+}
+
+nav.modo-oscuro button:hover{
+    color: var(--color-destacado);
+}
+
+/*---nav fin---*/
+
+/*---acerca de mi inicio---*/
+#acerca-de-mi, #trabajos, #skills{
+    padding-top: 50px;
+}
+
+article{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 30px;
+}
+
+article div:nth-of-type(1){
+    width: 36%;
+}
+
+article div:nth-of-type(1) p{    
+    font-family: var(--font-condensed);
+    text-align: right;
+    font-weight: 700;
+    font-size: 55pt;
+    line-height: 100%;
+    text-transform: uppercase;
+}
+
+article div:nth-of-type(1) p span:last-of-type{
+    color: var(--color-destacado);    
+}
+
+#texto-animado{        
+    opacity: 0;  
+    transition: linear 0.4s all;
+}
+
+article div:nth-of-type(2){
+    width: 35%;    
+    opacity: 0;
+    transition: linear 0.4s all;
+}
+
+article div:nth-of-type(2) p{
+    font-size: 12pt;
+    text-align: justify;
+    margin-bottom: 16px;
+}
+/*---acerca de mi fin---*/
+
+/*---skills inicio---*/
+section#skills {
+    padding-bottom: 90px;
+}
+
+section#skills div.container{
+    width: max-content;
+    margin: 30px auto;
+    column-count: 2;
+    column-gap: 100px;    
+}
+
+section#skills div.container > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap:25px;
+    width: 350px;    
+    opacity: 0;
+    transition: linear 0.4s all;
+}
+
+section#skills div.container figure {
+    width: 100px;
+    height: max-content;
+    font-family: var(--font-condensed);
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+/*---skills fin---*/
+
+/*---trabajos inicio---*/
+section#trabajos div.container{
+    width:1000px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    transition: linear 0.4s all;
+}
+
+
+section#trabajos div.container figure{
+    width: 300px;
+    height: max-content;
+    border-radius: 0 0 15px 15px;
+    background: var(--color-bg-claro);
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
+}
+
+section#trabajos div.container figure img{
+    width: 300px;
+}
+
+section#trabajos div.container figure figcaption{
+    padding-top: 5px;
+    padding-bottom: 15px;    
+    font-family: var(--font-condensed);
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--color-texto);
+    transition: linear 0.2s all;
+}
+
+/*juaro*/
+section#trabajos div.container a:nth-of-type(1):hover figure figcaption{
+    color: #714d93;
+}
+
+/*agencia fico*/
+section#trabajos div.container a:nth-of-type(2):hover figure figcaption{
+    color: #ffb90a;
+}
+
+/*datapais*/
+section#trabajos div.container a:nth-of-type(3):hover figure figcaption{
+    color: #6ec0ce;
+}
+/*---trabajos fin---*/
+
+/*---footer inicio---*/
+footer {
+    display: flex;    
+    height: max-content;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 30px 0;
+    background-color: var(--color-bg-claro);
+    transition:linear 0.4s all;
+}
+
+footer h2{
+    width: max-content;
+    font-size: 28pt;
+}
+
+footer a span{
+    font-size: 32pt;
+    color:var(--color-texto);
+    transition: linear 0.2s all;
+}
+
+footer a span:hover{
+    color:var(--color-destacado);
+}
+
+footer a:first-of-type span{
+    margin-right: 25px;
+}
+/*---footer fin---*/
+
+/*comportamientos generales*/
+.izquierda{
+    transform: translateX(-150px);
+}
+
+.derecha{
+    transform: translateX(150px);
+}
+
+.abajo {
+    transform: translateY(150px);
+}
+
+.mostrar{
+    opacity: 1!important;
+    transform: translate(0);
+}
+
+@media screen and (max-width: 1100px){
+    /*---nav inicio---*/
+    div.menu{
+        justify-content: flex-end;
+    }
+
+    div.menu a.logo-barra.encabezado{
+        top:1px;
+    }
+
+    nav.modo-oscuro{
+        margin-right: 35px;
+    }
+    /*---nav fin---*/
+
+    /*---acerca de mi inicio---*/
+    article div:nth-of-type(1){
+        width: 40%;
+    }
+
+    article div:nth-of-type(1) p{    
+        font-size: 48pt;
+    }
+    /*---acerca de mi fin---*/
+
+    /*---skills inicio---*/
+    section#skills div.container > div {
+        width: 275px;
+    }
+
+    section#skills div.container figure {
+        width: 75px;
+        font-size: 18px;
+    }
+
+    section#skills div.container figure img {
+        width: 75px;
+    }
+    /*---skills fin---*/
+
+    /*---trabajos inicio---*/
+    section#trabajos div.container{
+        width:850px;
+    }
+
+    section#trabajos div.container figure{
+        width: 250px;
+    }
+
+    section#trabajos div.container figure img{
+        width: 250px;
+    }
+    /*---trabajos fin---*/
+}
+
+@media screen and (max-width: 900px){
+    /*---acerca de mi inicio---*/
+    article div:nth-of-type(1){
+        width: 43%;
+    }        
+    /*---acerca de mi fin---*/
+
+    /*---trabajos inicio---*/
+    section#trabajos div.container{
+        width:100%;
+        justify-content: space-evenly;
+    }
+
+    section#trabajos div.container figure{
+        width: 200px;
+    }
+
+    section#trabajos div.container figure img{
+        width: 200px;
+    }
+    /*---trabajos fin---*/
+}
+
+@media screen and (min-width:768px) and (max-width:860px){
+    div.menu a, div.menu div {
+        transform: scale(.8);
+    }
+}
+
+@media screen and (min-width:768px){
+    .collapse {
+        opacity: 0;
+        transition: linear 0.2s all;
+    }
+}
+
+@media screen and (max-width: 767px){
+    h2{
+        font-size: 3em;
+    }
+
+    /*---header inicio---*/
+    .header{
+        padding: 2em;
+    }
+
+    /*---nav inicio---*/
+    div.menu{
+        width: 100%;
+        display: block;
+        margin: 1em auto;
+        padding: 0.5em 0;
+        top: 0;
+        background: none;
+        overflow: hidden;
+    }
+
+    div.menu a.logo-barra.encabezado{
+        font-size: 2em;
+        top:0.2em;
+    }
+
+    div.menu .collapse{
+        width: 3em;
+        height: 3em;
+        background: var(--color-destacado);
+        border-radius: 5px;
+        cursor: pointer;
+        transition: linear 0.2s all;
+        margin-left: 85%;
+
+    }
+
+    .icon-menu:before, .icon-cross:before{
+        color: var(--color-bg-claro);
+        font-size: 1.8em;
+    }
+
+    nav.navegacion, nav.modo-oscuro{
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        margin-left: -100%;
+        padding: 0;   
+        border-radius: 0;  
+    }
+
+    nav.modo-oscuro{
+        padding-bottom: 2.5em;
+    }
+
+    nav.navegacion a, nav.modo-oscuro button, nav.navegacion button{
+        margin: 0;
+        padding: 0.5em;
+        font-size: 1.2em;
+        text-align: center;
+        border-bottom: var(--color-bg) 1px solid;
+    }
+
+    nav.navegacion button{
+        display: block;
+        font-family: var(--font-condensed);
+        font-weight: 400;
+        color: var(--color-texto);
+    }
+
+    nav.navegacion a:first-of-type{
+        border-top: var(--color-bg) 1px solid;
+    }
+
+    nav.navegacion a:hover, nav a.button:hover, nav.modo-oscuro button:hover{
+        background: var(--color-bg);
+    }
+
+    div.menu nav.navegacion.activo{        
+        display: flex;        
+        justify-content: flex-start;
+        padding-top: 2em;
+        height: 100vh;
+        margin-left: 0;
+        background: var(--color-bg-claro);
+        transition: linear 0.2s all;
+    }
+
+    div.menu.activo {
+        position: fixed;
+        margin: 0;        
+        background: var(--color-bg-claro);
+        transition: linear 0.2s all;
+    }
+    
+    div.menu div{
+        height: 0;
+    }
+
+    div.menu div.activo{
+        height: auto;
+    }
+
+    header.activo, nav.modo-oscuro.activo{
+        display: none;
+    }
+    /*---nav fin---*/
+
+    /*Mi nombre es*/
+    #acerca-de-mi, #trabajos, #skills{
+        padding-top: 2em;
+    }
+
+    .header h1.logo div span:first-child{
+        margin-left: 15%;
+        font-size: 1em;
+    }
+
+    /*german - wainfeld*/
+    .header h1.logo div > span:nth-of-type(2), .header h1.logo div > span:nth-of-type(3){
+        font-size: 2.5em;
+    }
+
+    /*Te doy la bienvenida - a mi porfolio*/
+    .header h1.logo div > span:nth-of-type(4), .header h1.logo div > span:nth-of-type(5){
+        margin-right: 15%;
+        font-size: 1.2em;
+    }
+    /*---header fin---*/
+
+    /*---acerca de mi inicio---*/
+    article{
+        margin: 0 auto;
+        gap: 1em;
+    }
+
+    article div:nth-of-type(1){
+        width: 75%;
+    }
+
+
+    article div:nth-of-type(1) p{   
+        font-size: 2em;
+        text-align: left;
+        width: 100%;
+    }
+
+    article div:nth-of-type(2){
+        width: 75%;
+    }
+
+    article div:nth-of-type(2) p{
+        font-size: 1em;
+        text-align: left;
+        margin-bottom: 1.2em;
+    }
+    /*---acerca de mi fin---*/
+
+    /*---skills inicio---*/
+    section#skills {
+        padding-bottom: 3em;
+    }
+
+    section#skills div.container{
+        margin: 1.2em auto;
+        column-count: 1;
+        column-gap: 0;
+    }
+
+    section#skills div.container > div {
+        gap:1.5em;
+        width: 19.5em;
+        margin-bottom: 1.5em;
+    }
+
+    section#skills div.container figure {
+        width: 4.5em;
+        height: max-content;
+        font-size: 1.2em;
+    }
+    /*---skills fin---*/
+
+    /*---trabajos inicio---*/
+    section#trabajos div.container{
+        margin: 1.2em 0;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+
+    section#trabajos div.container a{
+        display: block;
+        height: max-content;
+        margin-bottom: 2em;
+    }
+
+    section#trabajos div.container figure{
+        width: 100%;
+    }
+
+    section#trabajos div.container figure img{
+        width: 100%;
+    }
+
+    section#trabajos div.container figure figcaption{
+        padding-top: 0.5em;
+        padding-bottom: 1em;   
+        font-size: 1.5em;
+    }
+
+    section#trabajos div.container figure img{
+        width: 100%;
+    }
+    /*---trabajos fin---*/
+
+    /*---footer inicio---*/
+    footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 1em 0;
+    }
+
+    footer h2{
+        width: max-content;
+        font-size: 2em;
+    }
+
+    footer div {
+        display: block;
+        margin-bottom: 2em;
+    }
+
+    footer a span{
+        font-size: 2.3em;
+
+    }
+
+    footer a:first-of-type span{
+        margin-right: 1em;
+    }
+
+    footer p {
+        max-width: 80%;
+        text-align:center;
+    }
+    /*---footer fin---*/
+}
+
+@media screen and (max-width: 513px){
+    /*---header inicio---*/
+    .header{
+        padding: 1.8em;
+    }
+
+    /*Mi nombre es*/
+    .header h1.logo div span:first-child{
+        margin-left: 10%;
+        font-size: 0.8em;
+    }
+
+    /*german - wainfeld*/
+    .header h1.logo div > span:nth-of-type(2), .header h1.logo div > span:nth-of-type(3){
+        font-size: 1.8em;
+    }
+
+    /*Te doy la bienvenida - a mi porfolio*/
+    .header h1.logo div > span:nth-of-type(4), .header h1.logo div > span:nth-of-type(5){
+        margin-right: 10%;
+        font-size: 0.8em;
+    }
+    /*---header fin---*/
+
+    /*---acerca de mi inicio---*/
+    article div:nth-of-type(1) p{         
+        display: flex;
+        flex-direction: column; 
+    }
+    /*---acerca de mi fin---*/
+
+    /*---footer inicio---*/    
+    footer p span{
+        display: block;
+    }
+    /*---footer fin---*/
+}
